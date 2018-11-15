@@ -1,0 +1,158 @@
+author: Mohammad Rahmani
+core-version: 5.1.17
+created: 20181115112823991
+description: Solution
+list: readme license release
+modified: 20181115115654760
+plugin-type: plugin
+title: $:/plugins/.mr/solution
+type: application/json
+version: 1.0.3
+
+{
+    "tiddlers": {
+        "$:/plugins/.mr/solution/example/center-table": {
+            "text": "; How center tables horizontally in a tiddler?\n: Create a tiddler tagged with `$:/tags/Stylesheet` and put the below css code inside it.\n<div style=\"width:50%\">\n\n```css\n.tc-tiddler-body table.centered{\n    margin:0 auto;\n}\n```\n</div>",
+            "url": "https://groups.google.com/d/msg/tiddlywiki/d1_Md9CUxEM/dq44Ih6FCwAJ",
+            "title": "$:/plugins/.mr/solution/example/center-table",
+            "tags": "solution",
+            "responder": "Eric Shulman",
+            "modifier": "Mohammad",
+            "modified": "20181108065731120",
+            "keywords": "table css",
+            "creator": "Mohammad",
+            "created": "20180928045042773"
+        },
+        "$:/plugins/.mr/solution/example/named-colors": {
+            "text": "Follow these simple steps to use named colors in your palettes or templates:\n\n\n# create a tiddlerfor your colors, e.g. `$:/.mr/colors`\n# set its type to ''Data dictionary'' (`application/x-tiddler-dictionary`)\n# add entries with descriptive color names, specifying a [[valid color format|http://www.w3schools.com/cssref/css_colors_legal.asp]]\n# use them in your palette or stylesheets as `{{$:/.mr/colors##color-name}}`\n\n\nSome example colors:\n\n* using [[standard html color names|http://www.w3schools.com/cssref/css_colornames.asp]] \n* sample custom color defined in [[hsla()|http://www.w3.org/wiki/CSS3/Color/HSLA]]\n\nHere's an example using those:\n<div style=\"width:50%\">\n\n```css\n.fancy{\nbackground:{{$:/.mr/colors##AliceBlue}};\ncolor:{{$:/.mr/colors##crimson}};\nborder: 2px solid {{$://colors##Beige}};\nborder-radius: 10px;\npadding:5px;\n}\n```\n</div>",
+            "url": "https://groups.google.com/d/msg/tiddlywiki/_czb8FpcmhI/tFdRJSr5BwAJ",
+            "type": "text/vnd.tiddlywiki",
+            "title": "$:/plugins/.mr/solution/example/named-colors",
+            "tags": "css exmp11 solution palette",
+            "revision": "0",
+            "responder": "Matabele",
+            "modifier": "Mohammad",
+            "modified": "20181108065855878",
+            "keywords": "color template dictionary css",
+            "creator": "Tobias Beer",
+            "created": "20151221102758131",
+            "bag": "default"
+        },
+        "$:/plugins/.mr/solution/image/question-circle.svg": {
+            "text": "<svg class=\"tc-image-button\" viewBox=\"0 0 512 512\" width=\"22pt\" height=\"22pt\"><path d=\"M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 448c-110.532 0-200-89.431-200-200 0-110.495 89.472-200 200-200 110.491 0 200 89.471 200 200 0 110.53-89.431 200-200 200zm107.244-255.2c0 67.052-72.421 68.084-72.421 92.863V300c0 6.627-5.373 12-12 12h-45.647c-6.627 0-12-5.373-12-12v-8.659c0-35.745 27.1-50.034 47.579-61.516 17.561-9.845 28.324-16.541 28.324-29.579 0-17.246-21.999-28.693-39.784-28.693-23.189 0-33.894 10.977-48.942 29.969-4.057 5.12-11.46 6.071-16.666 2.124l-27.824-21.098c-5.107-3.872-6.251-11.066-2.644-16.363C184.846 131.491 214.94 112 261.794 112c49.071 0 101.45 38.304 101.45 88.8zM298 368c0 23.159-18.841 42-42 42s-42-18.841-42-42 18.841-42 42-42 42 18.841 42 42z\"/></svg>\n<!--\nFont Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com\nLicense - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)\n-->",
+            "title": "$:/plugins/.mr/solution/image/question-circle.svg",
+            "tags": "",
+            "modifier": "Mohammad",
+            "modified": "20181112191038290",
+            "creator": "Mohammad",
+            "created": "20181107194817157"
+        },
+        "$:/plugins/.mr/solution/keywords-template": {
+            "text": "\\define keywords-body(kwd)\n<$list filter=\"[tag[$kwd$]] [search:keywords[$kwd$]]\" variable=\"itemTid\">\n<$link to=<<itemTid>> ><$text text=<<itemTid>>/></$link>\n</$list>\n\\end\n<!-- keywords-body lists all tiddler tagged with kwd or have kwd in their keywords field -->\n\n<$set name=\"transclusion\" value=<<qualify \"$:/state/popup/tag\">> >\n<$button class=\"tc-btn-invisible sl-keywords\" popup=<<transclusion>> >\n<$text text=<<currentTiddler>>/>\n</$button>\n<$reveal state=<<transclusion>> type=\"popup\" position=\"below\" animate=\"yes\" class=\"tc-drop-down\">\n<$link to=<<currentTiddler>> ><$text text=<<currentTiddler>>/></$link>\n<hr>\n<$macrocall $name=\"keywords-body\" kwd=<<currentTiddler>> />\n</$reveal>\n</$set>\n",
+            "title": "$:/plugins/.mr/solution/keywords-template",
+            "modifier": "Mohammad",
+            "modified": "20181108064845313",
+            "creator": "Mohammad",
+            "created": "20181107203051789"
+        },
+        "$:/plugins/.mr/solution/pagecontrols/new-solution": {
+            "text": "<$button  \n  class=\"tc-btn-invisible tc-tiddlylink\"\n  tooltip=\"Create new solution\">\n  <$action-sendmessage \n    $message=\"tm-new-tiddler\"\n    keywords=\"\"\n    tags=\"solution\"\n    responder=\"\"\n    url=\"\"\n    />\n  {{$:/plugins/.mr/solution/image/question-circle.svg}}\n</$button>\n",
+            "title": "$:/plugins/.mr/solution/pagecontrols/new-solution",
+            "tags": "$:/tags/PageControls",
+            "modifier": "Mohammad",
+            "modified": "20181112190846528",
+            "creator": "Mohammad",
+            "created": "20181107195113131"
+        },
+        "$:/plugins/.mr/solution/stylesheet/header-segment": {
+            "text": ".sl-header{\n  color: #383d41;\n  background-color: #e2e3e5;\n  border-color: #d6d8db;\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 1rem;\n  border-radius: 0.25rem;\n}\n\n.sl-keywords {\n   display: inline-block;\n    padding: 0.16em 0.7em;\n    font-size: 0.9em;\n    font-weight: 400;\n    line-height: 1.2em;\n    color: #333333;\n    white-space: nowrap;\n    vertical-align: baseline;\n    border-radius: 1em;\n    background-color:#FFFFF0;\n}\n.sl-keywords {\n  outline:none;\n} /*remove the blue border on button focus */",
+            "type": "text/css",
+            "title": "$:/plugins/.mr/solution/stylesheet/header-segment",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "Mohammad",
+            "modified": "20181108064924471",
+            "creator": "Mohammad",
+            "created": "20181107195138316"
+        },
+        "$:/plugins/.mr/solution/viewtemplate/header-segment": {
+            "text": "<$list filter=\"[is[current]tag[solution]]\">\n<div class=\"sl-header\">\n''Ref'': <a href={{!!url}}><$view field=\"responder\"}}/></a><br>\n''Keywords'': <$list filter={{!!keywords}} template=\"$:/plugins/.mr/solution/keywords-template\" />\n</div>\n</$list>\n\n\n",
+            "title": "$:/plugins/.mr/solution/viewtemplate/header-segment",
+            "tags": "$:/tags/ViewTemplate",
+            "modifier": "Mohammad",
+            "modified": "20181108064934241",
+            "list-before": "$:/core/ui/ViewTemplate/body",
+            "creator": "Mohammad",
+            "created": "20181107195214597"
+        },
+        "$:/plugins/.mr/utility/macro/mbox": {
+            "text": "\\define mbox(text:\"\", color:\"bg-primary\", width:\"100%\")\n<div class=\"message-box $color$\" style=\"width:$width$;\">\n$text$\n</div>\n\\end\n\n!! Message box\nThis is a small utility to create colorful message box. The syntax is as follows:\n\n```\n<<mbox text:\"\" color:\"\" width:\"\">>\n```\nWhere\n\n* `text`: The text to be shown in the message box\n* `color`: defualt value is //bg-primary// (light blue). The background colors can be used are\n** bg-warning\n** bg-success\n** bg-danger\n** bg-primary\n* `width`: the width of box (default: 100%)\n",
+            "title": "$:/plugins/.mr/utility/macro/mbox",
+            "tags": "$:/tags/Macro",
+            "modifier": "Mohammad",
+            "modified": "20181108070703110",
+            "creator": "Mohammad",
+            "created": "20181006063243332"
+        },
+        "$:/plugins/.mr/utility/stylesheet/mbox-colors": {
+            "text": ".message-box{\n     border-radius:5px;\n     padding:10px;\n     color: #495057;\n}\n.bg-primary{\n     background-color:#e7f5ff;\n}\n.bg-warning {\n    background-color: #fff9db;\n}\n\n.bg-danger {\n    background-color: #fff5f5;\n}\n\n.bg-success {\n    background-color: #ebfbee;\n}\n",
+            "type": "text/css",
+            "title": "$:/plugins/.mr/utility/stylesheet/mbox-colors",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "Mohammad",
+            "modified": "20181108065023929",
+            "creator": "Mohammad",
+            "created": "20181001193352558"
+        },
+        "$:/plugins/.mr/solution/ui/AdvancedSearch/Field": {
+            "created": "20141231095518178",
+            "text": "\\define searchInField(field, for, ci)\n<$list filter=\"[!is[shadow]!is[system]regexp:$field$[$for$$ci$]limit[1]]\">\n<dt>$field$</dt>\n</$list>\n\n<$list filter=\"[!is[shadow]!is[system]regexp:$field$[$for$$ci$]]\">\n<dd><$link><$view field=\"title\"/></$link></dd>\n</$list>\n\\end\n\n<style>.tc-advanced-search-check input {width:auto !important;}</style>\n\nSearch in fields... &nbsp; <span class=\"tc-advanced-search-check\"><$checkbox field=\"case-insensitive\" tiddler=\"$:/temp/advancedsearch\" checked=\"(?i)\"> case insensitive</$checkbox></span>\n\n<div class=\"tc-search\">\n<$edit-text tiddler=\"$:/temp/advancedsearch\" type=\"search\" tag=\"input\"/> <$select field=\"field\" tiddler=\"$:/temp/advancedsearch\" default=\"\">\n<option value=\"\">*any</option>\n<$list filter=\"[!is[shadow]!is[system]fields[]sort[]]\" variable=\"field\">\n<option value=<<field>>><<field>></option>\n</$list>\n</$select>\n<$reveal state=\"$:/temp/advancedsearch\" type=\"nomatch\" text=\"\">\n<$button class=\"tc-btn-invisible\">\n<$action-setfield $tiddler=\"$:/temp/advancedsearch\" $field=\"text\" $value=\"\"/>\n{{$:/core/images/close-button}}\n</$button>\n</$reveal>\n</div>\n\n<$reveal state=\"$:/temp/advancedsearch\" type=\"nomatch\" text=\"\">\n<$reveal state=\"$:/temp/advancedsearch!!field\" type=\"match\" text=\"\">\n<dl>\n<$list filter=\"[!is[shadow]!is[system]fields[]]\" variable=\"field\">\n\n<$reveal type=nomatch text=text default=<<field>>>\n<$macrocall $name=\"searchInField\" field=<<field>> for={{$:/temp/advancedsearch}} ci={{$:/temp/advancedsearch!!case-insensitive}}/>\n</$reveal>\n</$list>\n</dl>\n</$reveal>\n<$reveal state=\"$:/temp/advancedsearch!!field\" type=\"nomatch\" text=\"\">\n\n<dl>\n<$macrocall $name=\"searchInField\" field={{$:/temp/advancedsearch!!field}} for={{$:/temp/advancedsearch}} ci={{$:/temp/advancedsearch!!case-insensitive}}/>\n</dl>\n</$reveal>\n</$reveal>",
+            "bag": "default",
+            "revision": "0",
+            "type": "text/vnd.tiddlywiki",
+            "title": "$:/plugins/.mr/solution/ui/AdvancedSearch/Field",
+            "tags": "$:/tags/AdvancedSearch",
+            "modifier": "Tobias Beer",
+            "modified": "20181115101552200",
+            "list-before": "$:/core/ui/AdvancedSearch/Filter",
+            "creator": "Tobias Beer",
+            "caption": "In Fields"
+        },
+        "$:/plugins/.mr/solution/release": {
+            "created": "20181108074735778",
+            "text": "!! Rev 1.0.3\n<<<\n* ''Nov 15th, 2018''\n* A new `In Field` tab is added to Advanced Search to let simply serach in keywords and responder\n* The online name changed to Solution Resource\n\n<<<\n!! Rev 1.0.2\n<<<\n* ''Nov 8th, 2018''\n* Keywords-pill now shows tiddlers have keyword and/or tagged with keyword\n* New and improved template for keywords\n* New macro for kewords-pill\n* Improved css\n\n<<<\n\n!! Rev 1.0.0\n<<<\n* ''Oct 6th, 2018''\n* Initial release\n* A clone of tag-pil macro is used\n<<<",
+            "version": "1.0.3",
+            "title": "$:/plugins/.mr/solution/release",
+            "tags": "",
+            "modifier": "Mohammad",
+            "modified": "20181115113129325",
+            "creator": "Mohammad"
+        },
+        "$:/plugins/.mr/solution/readme": {
+            "created": "20181004073831326",
+            "text": "! Create a new solution \n# From the page controls click on the ''question mark'' icon to create a new solution tiddler\n# Fill in the fileds\n#* ''responder'' (e.g author, developer, or responder in forums)\n#* ''keywords''\n#* ''url''\n# Add your description to tiddler body\n# Save your new solution tiddler\n\n<<mbox color:\"bg-warning\" width:75% text: \"\"\"\n''Keywords'' are space separated words. For example if your keywords are //variable//, //macro//, //count//, fill your keywords field like this:<br> `variable macro count`.\n\"\"\">>\n\n!! Examples\nTwo examples are given below:\n\n# [[Named colors|$:/plugins/.mr/solution/example/named-colors]]\n# [[Center tables|$:/plugins/.mr/solution/example/center-table]]\n\n<<mbox color:\"bg-primary\" width:75% text: \"\"\"\nEach keyword in the view mode is ''clickable''. On click it list all tiddlers tagged with that keyword and all tiddlers have this keyword in their `keywords` field. This feature is like tag pills.\n\"\"\">>\n\n\n! Search in keywords and responder\nIt is quite simple to later search your wiki and find solution related to specific subject. Here two different methods are presented\n\n!! Search using Filter tab\n<<<\n* Open the [[Advanced Search|$:/AdvancedSearch]] {{$:/core/ui/Buttons/advanced-search}} by clicking the magnifier in the sidebar\n* Click on the `Filter` tab and put your search criteria in the inputbox\n<<<\n\n!! Sample searches\n<<<\n* Search for `macro` in solution tiddlers\n** Search criteria: `[search:keywords[macro]]`\n* Search for tiddlers on `macro` but not `TOC`\n** Search criteria: `[search:keywords[macro]!search:keywords[TOC]]`\n<<<\n\n!! Search using the new In Fields tab\n<<<\nSolution pluging adds an additional tab to [[Advanced Search|$:/AdvancedSearch]] {{$:/core/ui/Buttons/advanced-search}} allowing you to search in field contents. The field can be choosen from a drop down menu and it is a case sensitive search by default.\n\n<<mbox color:\"bg-success\" width:75% text: \"\"\"\nThis is a small code by [[Tobias Beer|http://tobibeer.github.io/tb5/#Searching%20In%20Tiddler%20Fields]].\"\"\">>\n<<<\n\n! Installation\nSimply drag and drop the below links into your wiki\n\n* [[$:/plugins/.mr/solution]]\n\n",
+            "title": "$:/plugins/.mr/solution/readme",
+            "tags": "",
+            "modifier": "Mohammad",
+            "modified": "20181115115435595",
+            "creator": "Mohammad"
+        },
+        "$:/plugins/.mr/solution/philosophy": {
+            "created": "20181004101328302",
+            "text": "!Philosophy\nThere are many questions and answers in [[TW Google forum|https://groups.google.com/forum/#!forum/tiddlywiki]], some of them shows elegant solution to raised questions and worth to be archives in a manner to be accessible easily later on.\n\n!! Solution plugin\nThis is a small plugin to create solution tiddlers. It adds a button to page controls and uses template to show the author, reference post and also lets to add keywords. The keywords act like tags, so, clicking on them shows a list of all tiddlers tagged with this keyword or has this keyword in its `keywords` field.\n\n!! Search in keywords and responder\nThe solution plugin adds a new search tab `In Fields` to Advanced search, allows make search in keywords and responder.\n\n!! Usage and installation\nFor usage and installtion see [[readme|$:/plugins/.mr/solution/readme]]\n\n!! Examples\nTwo examples are given below:\n\n# [[Named colors|$:/plugins/.mr/solution/example/named-colors]]\n# [[Center tables|$:/plugins/.mr/solution/example/center-table]]\n\n<<mbox color:\"bg-warning\" width:75% text: \"\"\"\n''Solution tiddler'' is used to document the questions and answers (Q&A) from TW Google forum or public TW wikis.\"\"\">>\n\n",
+            "title": "$:/plugins/.mr/solution/philosophy",
+            "tags": "",
+            "modifier": "Mohammad",
+            "modified": "20181115113544204",
+            "creator": "Mohammad"
+        },
+        "$:/plugins/.mr/solution/license": {
+            "created": "20181101134530634",
+            "text": "Distributed under an MIT license.\n\nCopyright (c) 2018 [[Mohammad Rahmani|https://github.com/kookma]]\n\n<<<\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n<<<\n",
+            "type": "application/x-tiddler",
+            "title": "$:/plugins/.mr/solution/license",
+            "modifier": "archive Q&A and solutions",
+            "modified": "20181115115526002",
+            "creator": "Mohammad"
+        }
+    }
+}
