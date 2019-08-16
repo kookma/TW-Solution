@@ -4,7 +4,7 @@ created: 20190816054153284
 creator: Mohammad
 description: Solution
 list: philosophy readme release license
-modified: 20190816054153284
+modified: 20190816083131083
 modifier: Mohammad
 plugin-type: plugin
 title: $:/plugins/kookma/solution
@@ -29,15 +29,6 @@ version: 1.0.5
             "modified": "20190816045153337",
             "creator": "Mohammad",
             "created": "20181107203051789"
-        },
-        "$:/plugins/kookma/solution/pagecontrols/new-solution": {
-            "created": "20181107195113131",
-            "creator": "Mohammad",
-            "text": "<$button  \n  class=\"tc-btn-invisible tc-tiddlylink\"\n  tooltip=\"Create new solution\">\n  <$action-sendmessage \n    $message=\"tm-new-tiddler\"\n    keywords=\"\"\n    tags=\"solution\"\n    responder=\"\"\n    url=\"\"\n    />\n  {{$:/plugins/kookma/solution/image/question-circle.svg}}\n</$button>\n",
-            "title": "$:/plugins/kookma/solution/pagecontrols/new-solution",
-            "tags": "$:/tags/PageControls",
-            "modifier": "Mohammad",
-            "modified": "20190816045925736"
         },
         "$:/plugins/kookma/solution/philosophy": {
             "created": "20181004101328302",
@@ -109,6 +100,34 @@ version: 1.0.5
             "title": "$:/plugins/kookma/solution/license",
             "modifier": "Mohammad",
             "modified": "20190816045413338"
+        },
+        "$:/language/Buttons/Solution/Caption": {
+            "text": "solution",
+            "title": "$:/language/Buttons/Solution/Caption",
+            "modifier": "Mohammad",
+            "modified": "20190816080556215",
+            "creator": "Mohammad",
+            "created": "20190816080549398"
+        },
+        "$:/language/Buttons/Solution/Hint": {
+            "created": "20190816080652314",
+            "creator": "Mohammad",
+            "text": "Create new solution",
+            "title": "$:/language/Buttons/Solution/Hint",
+            "tags": "",
+            "modifier": "Mohammad",
+            "modified": "20190816083639011"
+        },
+        "$:/plugins/kookma/solution/buttons/pagecontrol": {
+            "created": "20181107195113131",
+            "creator": "Mohammad",
+            "text": "\\define new-solution()\n<$action-sendmessage \n    $message=\"tm-new-tiddler\"\n    keywords=\"\"\n    tags=\"solution\"\n    responder=\"\"\n    url=\"\" />\n\\end\n\n\n<$button \n actions=<<new-solution>> \n tooltip={{$:/language/Buttons/Solution/Hint}} \n aria-label={{$:/language/Buttons/Solution/Caption}} \n class=<<tv-config-toolbar-class>> >\n<$list filter=\"[<tv-config-toolbar-icons>prefix[yes]]\">\n{{$:/plugins/kookma/solution/image/question-circle.svg}}\n</$list>\n<$list filter=\"[<tv-config-toolbar-text>prefix[yes]]\">\n<span class=\"tc-btn-text\"><$text text={{$:/language/Buttons/Solution/Caption}}/></span>\n</$list>\n</$button>",
+            "title": "$:/plugins/kookma/solution/buttons/pagecontrol",
+            "tags": "$:/tags/PageControls",
+            "modifier": "Mohammad",
+            "modified": "20190816084132385",
+            "caption": "{{$:/plugins/kookma/solution/image/question-circle.svg}} {{$:/language/Buttons/Solution/Caption}}",
+            "description": "{{$:/language/Buttons/Solution/Hint}} "
         }
     }
 }
