@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>Solution Resource — A resource of Q&A and solutions Rev: </title>
+<title>Solution Resource — A resource of Q&A and solutions Rev: 1.0.6</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -165,6 +165,10 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/plugins/kookma/solution/buttons/pagecontrol</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/plugins/kookma/solution/pagecontrols/new-solution</li>
+
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/clone</li>
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others</li>
@@ -215,15 +219,21 @@ Error message and password prompt
 
 <li>$:/state/tab-1863676768</li>
 
+<li>$:/state/tab/moresidebar-1850697562</li>
+
 <li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/UserName</li>
 
 <li>$:/StoryList</li>
 
+<li>$:/temp/advancedsearch</li>
+
 <li>$:/temp/infieldsearch</li>
 
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/temp/tinka/cpTabs--1043537212</li>
 
@@ -232,6 +242,8 @@ Error message and password prompt
 <li>$:/temp/tinka/search</li>
 
 <li>$:/temp/tinka/searchTab--1633687565</li>
+
+<li>$:/temp/tinka/searchTab--803563735</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -344,6 +356,12 @@ Mohammad Rahmani: https://github.com/kookma
 </div>
 <div created="20181112192202167" modified="20181112192202167" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh">
 <pre>show</pre>
+</div>
+<div created="20190816081828509" creator="Mohammad" modified="20190816081831223" modifier="Mohammad" title="$:/config/PageControlButtons/Visibility/$:/plugins/kookma/solution/buttons/pagecontrol">
+<pre>show</pre>
+</div>
+<div created="20190816081012878" creator="Mohammad" modified="20190816081012878" modifier="Mohammad" title="$:/config/PageControlButtons/Visibility/$:/plugins/kookma/solution/pagecontrols/new-solution">
+<pre>hide</pre>
 </div>
 <div created="20190816050724332" creator="Mohammad" modified="20190816050724332" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/clone">
 <pre>show</pre>
@@ -9862,7 +9880,7 @@ Mohammad Rahmani: https://github.com/kookma
     }
 }</pre>
 </div>
-<div author="Mohammad Rahmani" core-version="5.1.17" created="20190816054153284" creator="Mohammad" description="Solution" list="philosophy readme release license" modified="20190816054153284" modifier="Mohammad" plugin-type="plugin" title="$:/plugins/kookma/solution" type="application/json" version="1.0.5">
+<div author="Mohammad Rahmani" core-version="5.1.17" created="20190816054153284" creator="Mohammad" description="Solution" list="philosophy readme release license" modified="20190819105722552" modifier="Mohammad" plugin-type="plugin" title="$:/plugins/kookma/solution" type="application/json" version="1.0.6">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/kookma/solution/image/question-circle.svg&quot;: {
@@ -9882,15 +9900,6 @@ Mohammad Rahmani: https://github.com/kookma
             &quot;creator&quot;: &quot;Mohammad&quot;,
             &quot;created&quot;: &quot;20181107203051789&quot;
         },
-        &quot;$:/plugins/kookma/solution/pagecontrols/new-solution&quot;: {
-            &quot;created&quot;: &quot;20181107195113131&quot;,
-            &quot;creator&quot;: &quot;Mohammad&quot;,
-            &quot;text&quot;: &quot;&lt;$button  \n  class=\&quot;tc-btn-invisible tc-tiddlylink\&quot;\n  tooltip=\&quot;Create new solution\&quot;&gt;\n  &lt;$action-sendmessage \n    $message=\&quot;tm-new-tiddler\&quot;\n    keywords=\&quot;\&quot;\n    tags=\&quot;solution\&quot;\n    responder=\&quot;\&quot;\n    url=\&quot;\&quot;\n    /&gt;\n  {{$:/plugins/kookma/solution/image/question-circle.svg}}\n&lt;/$button&gt;\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/kookma/solution/pagecontrols/new-solution&quot;,
-            &quot;tags&quot;: &quot;$:/tags/PageControls&quot;,
-            &quot;modifier&quot;: &quot;Mohammad&quot;,
-            &quot;modified&quot;: &quot;20190816045925736&quot;
-        },
         &quot;$:/plugins/kookma/solution/philosophy&quot;: {
             &quot;created&quot;: &quot;20181004101328302&quot;,
             &quot;creator&quot;: &quot;Mohammad&quot;,
@@ -9908,16 +9917,6 @@ Mohammad Rahmani: https://github.com/kookma
             &quot;tags&quot;: &quot;&quot;,
             &quot;modifier&quot;: &quot;Mohammad&quot;,
             &quot;modified&quot;: &quot;20190816050204872&quot;
-        },
-        &quot;$:/plugins/kookma/solution/release&quot;: {
-            &quot;text&quot;: &quot;!! Rev 1.0.5\n&lt;&lt;&lt;\n* ''Aug 16th, 2019''\n* Use separate temporary tiddler for search terms\n* Updated to Tiddlywiki 5.1.20\n* New naming for plugin is used ($:/plugins/kookma)\n&lt;&lt;&lt;\n\n!! Rev 1.0.4\n&lt;&lt;&lt;\n* ''Jan 22th, 2019''\n* Add target=_blank to open the links of solution in new tab, windows\n* Minor revision to readme\n&lt;&lt;&lt;\n\n!! Rev 1.0.3\n&lt;&lt;&lt;\n* ''Nov 15th, 2018''\n* A new `In Field` tab is added to Advanced Search to let simply serach in keywords and responder\n* The online name changed to Solution Resource\n\n&lt;&lt;&lt;\n!! Rev 1.0.2\n&lt;&lt;&lt;\n* ''Nov 8th, 2018''\n* Keywords-pill now shows tiddlers have keyword and/or tagged with keyword\n* New and improved template for keywords\n* New macro for kewords-pill\n* Improved css\n\n&lt;&lt;&lt;\n\n!! Rev 1.0.0\n&lt;&lt;&lt;\n* ''Oct 6th, 2018''\n* Initial release\n* A clone of tag-pil macro is used\n&lt;&lt;&lt;&quot;,
-            &quot;version&quot;: &quot;1.0.3&quot;,
-            &quot;title&quot;: &quot;$:/plugins/kookma/solution/release&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modifier&quot;: &quot;Mohammad&quot;,
-            &quot;modified&quot;: &quot;20190816045057714&quot;,
-            &quot;creator&quot;: &quot;Mohammad&quot;,
-            &quot;created&quot;: &quot;20181108074735778&quot;
         },
         &quot;$:/plugins/kookma/solution/stylesheet/header-segment&quot;: {
             &quot;created&quot;: &quot;20181107195138316&quot;,
@@ -9943,16 +9942,6 @@ Mohammad Rahmani: https://github.com/kookma
             &quot;caption&quot;: &quot;In Fields&quot;,
             &quot;bag&quot;: &quot;default&quot;
         },
-        &quot;$:/plugins/kookma/solution/viewtemplate/header-segment&quot;: {
-            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[is[current]tag[solution]]\&quot;&gt;\n&lt;div class=\&quot;sl-header\&quot;&gt;\n''Ref'': &lt;a href={{!!url}} target=\&quot;_blank\&quot;&gt;&lt;$view field=\&quot;responder\&quot;}}/&gt;&lt;/a&gt;&lt;br&gt;\n''Keywords'': &lt;$list filter={{!!keywords}} template=\&quot;$:/plugins/.mr/solution/keywords-template\&quot; /&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n\n\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/kookma/solution/viewtemplate/header-segment&quot;,
-            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;modifier&quot;: &quot;Mohammad&quot;,
-            &quot;modified&quot;: &quot;20190816045258466&quot;,
-            &quot;list-before&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;,
-            &quot;creator&quot;: &quot;Mohammad&quot;,
-            &quot;created&quot;: &quot;20181107195214597&quot;
-        },
         &quot;$:/plugins/kookma/solution/license&quot;: {
             &quot;created&quot;: &quot;20181101134530634&quot;,
             &quot;creator&quot;: &quot;Mohammad&quot;,
@@ -9961,6 +9950,54 @@ Mohammad Rahmani: https://github.com/kookma
             &quot;title&quot;: &quot;$:/plugins/kookma/solution/license&quot;,
             &quot;modifier&quot;: &quot;Mohammad&quot;,
             &quot;modified&quot;: &quot;20190816045413338&quot;
+        },
+        &quot;$:/language/Buttons/Solution/Caption&quot;: {
+            &quot;text&quot;: &quot;solution&quot;,
+            &quot;title&quot;: &quot;$:/language/Buttons/Solution/Caption&quot;,
+            &quot;modifier&quot;: &quot;Mohammad&quot;,
+            &quot;modified&quot;: &quot;20190816080556215&quot;,
+            &quot;creator&quot;: &quot;Mohammad&quot;,
+            &quot;created&quot;: &quot;20190816080549398&quot;
+        },
+        &quot;$:/language/Buttons/Solution/Hint&quot;: {
+            &quot;created&quot;: &quot;20190816080652314&quot;,
+            &quot;creator&quot;: &quot;Mohammad&quot;,
+            &quot;text&quot;: &quot;Create new solution&quot;,
+            &quot;title&quot;: &quot;$:/language/Buttons/Solution/Hint&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modifier&quot;: &quot;Mohammad&quot;,
+            &quot;modified&quot;: &quot;20190816083639011&quot;
+        },
+        &quot;$:/plugins/kookma/solution/buttons/pagecontrol&quot;: {
+            &quot;created&quot;: &quot;20181107195113131&quot;,
+            &quot;creator&quot;: &quot;Mohammad&quot;,
+            &quot;text&quot;: &quot;\\define new-solution()\n&lt;$action-sendmessage \n    $message=\&quot;tm-new-tiddler\&quot;\n    keywords=\&quot;\&quot;\n    tags=\&quot;solution\&quot;\n    responder=\&quot;\&quot;\n    url=\&quot;\&quot; /&gt;\n\\end\n\n\n&lt;$button \n actions=&lt;&lt;new-solution&gt;&gt; \n tooltip={{$:/language/Buttons/Solution/Hint}} \n aria-label={{$:/language/Buttons/Solution/Caption}} \n class=&lt;&lt;tv-config-toolbar-class&gt;&gt; &gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/plugins/kookma/solution/image/question-circle.svg}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Solution/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;&quot;,
+            &quot;title&quot;: &quot;$:/plugins/kookma/solution/buttons/pagecontrol&quot;,
+            &quot;tags&quot;: &quot;$:/tags/PageControls&quot;,
+            &quot;modifier&quot;: &quot;Mohammad&quot;,
+            &quot;modified&quot;: &quot;20190816084132385&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/kookma/solution/image/question-circle.svg}} {{$:/language/Buttons/Solution/Caption}}&quot;,
+            &quot;description&quot;: &quot;{{$:/language/Buttons/Solution/Hint}} &quot;
+        },
+        &quot;$:/plugins/kookma/solution/viewtemplate/header-segment&quot;: {
+            &quot;created&quot;: &quot;20181107195214597&quot;,
+            &quot;creator&quot;: &quot;Mohammad&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[is[current]tag[solution]]\&quot;&gt;\n&lt;div class=\&quot;sl-header\&quot;&gt;\n''Ref'': &lt;a href={{!!url}} target=\&quot;_blank\&quot;&gt;&lt;$view field=\&quot;responder\&quot;}}/&gt;&lt;/a&gt;&lt;br&gt;\n''Keywords'': &lt;$list filter={{!!keywords}} template=\&quot;$:/plugins/kookma/solution/keywords-template\&quot; /&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n\n\n&quot;,
+            &quot;title&quot;: &quot;$:/plugins/kookma/solution/viewtemplate/header-segment&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;modifier&quot;: &quot;Mohammad&quot;,
+            &quot;modified&quot;: &quot;20190819080548379&quot;,
+            &quot;list-before&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;
+        },
+        &quot;$:/plugins/kookma/solution/release&quot;: {
+            &quot;created&quot;: &quot;20181108074735778&quot;,
+            &quot;creator&quot;: &quot;Mohammad&quot;,
+            &quot;text&quot;: &quot;!! Rev 1.0.6\n&lt;&lt;&lt;\n* ''Aug 19th, 2019''\n* Minor issue in keyword templated fixed\n&lt;&lt;&lt;\n\n!! Rev 1.0.5\n&lt;&lt;&lt;\n* ''Aug 16th, 2019''\n* Use separate temporary tiddler for search terms\n* Updated to Tiddlywiki 5.1.20\n* New naming for plugin is used ($:/plugins/kookma)\n&lt;&lt;&lt;\n\n!! Rev 1.0.4\n&lt;&lt;&lt;\n* ''Jan 22th, 2019''\n* Add target=_blank to open the links of solution in new tab, windows\n* Minor revision to readme\n&lt;&lt;&lt;\n\n!! Rev 1.0.3\n&lt;&lt;&lt;\n* ''Nov 15th, 2018''\n* A new `In Field` tab is added to Advanced Search to let simply serach in keywords and responder\n* The online name changed to Solution Resource\n\n&lt;&lt;&lt;\n!! Rev 1.0.2\n&lt;&lt;&lt;\n* ''Nov 8th, 2018''\n* Keywords-pill now shows tiddlers have keyword and/or tagged with keyword\n* New and improved template for keywords\n* New macro for kewords-pill\n* Improved css\n\n&lt;&lt;&lt;\n\n!! Rev 1.0.0\n&lt;&lt;&lt;\n* ''Oct 6th, 2018''\n* Initial release\n* A clone of tag-pil macro is used\n&lt;&lt;&lt;&quot;,
+            &quot;version&quot;: &quot;1.0.3&quot;,
+            &quot;title&quot;: &quot;$:/plugins/kookma/solution/release&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modifier&quot;: &quot;Mohammad&quot;,
+            &quot;modified&quot;: &quot;20190819111555662&quot;
         }
     }
 }</pre>
@@ -10552,8 +10589,8 @@ Mohammad Rahmani: https://github.com/kookma
     }
 }</pre>
 </div>
-<div created="20181108064829908" creator="Mohammad" modified="20181115113142035" modifier="Mohammad" title="$:/SiteSubtitle">
-<pre>A resource of Q&amp;A and solutions Rev: {{$:/plugins/.mr/solution/release!!version}}</pre>
+<div created="20181108064829908" creator="Mohammad" modified="20190816083216660" modifier="Mohammad" title="$:/SiteSubtitle">
+<pre>A resource of Q&amp;A and solutions Rev: {{$:/plugins/kookma/solution!!version}}</pre>
 </div>
 <div created="20181107224305729" creator="Mohammad" modified="20181108164856236" modifier="Mohammad" title="$:/SiteTitle">
 <pre>Solution Resource</pre>
@@ -10564,22 +10601,28 @@ Mohammad Rahmani: https://github.com/kookma
 <div created="20190816045735896" creator="Mohammad" modified="20190816045833601" modifier="Mohammad" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20190816054356105" creator="Mohammad" modified="20190816054356106" modifier="Mohammad" title="$:/state/tab--1498284803">
-<pre>$:/plugins/kookma/solution/ui/AdvancedSearch/Field</pre>
+<div created="20190816054356105" creator="Mohammad" modified="20190816071441965" modifier="Mohammad" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20190816045332896" creator="Mohammad" modified="20190816054137451" modifier="Mohammad" title="$:/state/tab-1749438307">
+<div created="20190816045332896" creator="Mohammad" modified="20190816083227385" modifier="Mohammad" title="$:/state/tab-1749438307">
 <pre>$:/plugins/ahahn/tinka/controlPanelExtension</pre>
 </div>
 <div created="20190816050722868" creator="Mohammad" modified="20190816050722868" modifier="Mohammad" title="$:/state/tab-1863676768">
 <pre>$:/core/ui/TiddlerInfo/Tools</pre>
 </div>
-<div created="20190816043908556" creator="Mohammad" modified="20190816054617697" modifier="Mohammad" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20190819080403914" creator="Mohammad" modified="20190819080411152" modifier="Mohammad" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/All</pre>
+</div>
+<div created="20190816043908556" creator="Mohammad" modified="20190819080414672" modifier="Mohammad" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20190109040111362" creator="M" modified="20190109040112627" modifier="Mohamma" title="$:/status/UserName">
 <pre>Mohammad</pre>
 </div>
 <div list="[[Solution Plugin]] Readme [[Example: Center Tabeles]]" title="$:/StoryList">
+<pre></pre>
+</div>
+<div created="20190816071444602" creator="Mohammad" modified="20190816084141513" modifier="Mohammad" title="$:/temp/advancedsearch">
 <pre></pre>
 </div>
 <div created="20190816050304991" creator="Mohammad" modified="20190816054403433" modifier="Mohammad" title="$:/temp/infieldsearch">
@@ -10643,16 +10686,22 @@ Mohammad Rahmani: https://github.com/kookma
     }
 }</pre>
 </div>
+<div created="20190819111626423" creator="Mohammad" modified="20190819111647853" modifier="Mohammad" title="$:/temp/search">
+<pre></pre>
+</div>
 <div created="20190816050322389" creator="Mohammad" modified="20190816054141209" modifier="Mohammad" title="$:/temp/tinka/cpTabs--1043537212">
 <pre>$:/plugins/ahahn/tinka/pluginManagement</pre>
 </div>
 <div created="20190816050640404" creator="Mohammad" modified="20190816050640404" modifier="Mohammad" result="false" title="$:/temp/tinka/CreateVars">
 <pre></pre>
 </div>
-<div created="20190816050541046" creator="Mohammad" modified="20190816050557701" modifier="Mohammad" title="$:/temp/tinka/search">
-<pre>[prefix[$:/plugins/kookma/solution]]</pre>
+<div created="20190816050541046" creator="Mohammad" modified="20190816081951354" modifier="Mohammad" title="$:/temp/tinka/search">
+<pre>[prefix[$:/plugins/kookma/solution]]  $:/language/Buttons/Solution/Hint $:/language/Buttons/Solution/Caption</pre>
 </div>
 <div created="20190816050539357" creator="Mohammad" modified="20190816050539357" modifier="Mohammad" title="$:/temp/tinka/searchTab--1633687565">
+<pre>$:/plugins/ahahn/tinka/search-filter</pre>
+</div>
+<div created="20190816081158917" creator="Mohammad" modified="20190816081859387" modifier="Mohammad" title="$:/temp/tinka/searchTab--803563735">
 <pre>$:/plugins/ahahn/tinka/search-filter</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.20">
