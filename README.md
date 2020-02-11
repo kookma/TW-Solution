@@ -3,5 +3,5 @@ Solution is a Tiddlywiki 5 plugin for creating solution tiddlers to document the
 
 For demo see: https://kookma.github.io/Solution/
 
-* Latest version 1.0.6
-* Date: Aug 19, 2019
+* Latest version 1.0.9
+* Date: Feb 11th, 2020
