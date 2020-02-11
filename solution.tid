@@ -1,17 +1,17 @@
 author: Mohammad Rahmani
-core-version: >= 5.1.20
+core-version: >= 5.1.21
 created: 20190816054153284
 creator: Mohammad
 description: Solution
 list: philosophy readme history license
-modified: 20191213165530315
+modified: 20200211095312594
 modifier: Mohammad
 name: TW-Solution
 plugin-type: plugin
 source: https://github.com/kookma/TW-Solution
 title: $:/plugins/kookma/solution
 type: application/json
-version: 1.0.7
+version: 1.0.9
 
 {
     "tiddlers": {
@@ -97,16 +97,6 @@ version: 1.0.7
             "caption": "{{$:/plugins/kookma/solution/image/question-circle.svg}} {{$:/language/Buttons/Solution/Caption}}",
             "description": "{{$:/language/Buttons/Solution/Hint}} "
         },
-        "$:/plugins/kookma/solution/viewtemplate/header-segment": {
-            "created": "20181107195214597",
-            "creator": "Mohammad",
-            "text": "<$list filter=\"[is[current]tag[solution]]\">\n<div class=\"sl-header\">\n''Ref'': <a href={{!!url}} target=\"_blank\"><$view field=\"responder\"}}/></a><br>\n''Keywords'': <$list filter={{!!keywords}} template=\"$:/plugins/kookma/solution/keywords-template\" />\n</div>\n</$list>\n\n\n",
-            "title": "$:/plugins/kookma/solution/viewtemplate/header-segment",
-            "tags": "$:/tags/ViewTemplate",
-            "modifier": "Mohammad",
-            "modified": "20190819080548379",
-            "list-before": "$:/core/ui/ViewTemplate/body"
-        },
         "$:/plugins/kookma/solution/ui/AdvancedSearch/Field": {
             "text": "\\define selectedFields() title caption tags keywords responder\n\\define searchInField(field, for, ci)\n<$list filter=\"[!is[shadow]!is[system]regexp:$field$[$for$$ci$]limit[1]]\">\n<dt>$field$</dt>\n</$list>\n\n<$list filter=\"[!is[shadow]!is[system]regexp:$field$[$for$$ci$]]\">\n<dd><$link><$view field=\"title\"/></$link></dd>\n</$list>\n\\end\n\n<style>.tc-advanced-search-check input {width:auto !important;}</style>\n\nSearch in fields... &nbsp; <span class=\"tc-advanced-search-check\"><$checkbox field=\"case-insensitive\" tiddler=\"$:/temp/infieldsearch\" checked=\"(?i)\"> case insensitive</$checkbox></span>\n\n<div class=\"tc-search\">\n<$edit-text tiddler=\"$:/temp/infieldsearch\" type=\"search\" tag=\"input\" placeholder=\"search terms\" default=\"\"/> <$select field=\"field\" tiddler=\"$:/temp/infieldsearch\" default=\"*\">\n<optgroup label='Selected'>\n<$list filter=<<selectedFields>> variable=\"field\">\n<option value=<<field>>><<field>></option>\n</$list>\n</optgroup>\n<optgroup label='Other'>\n<option value=\"\">*any</option>\n<$list filter=\"[!is[shadow]!is[system]fields[]sort[]] -[enlist<selectedFields>]\" variable=\"field\">\n<option value=<<field>>><<field>></option>\n</$list>\n</optgroup>\n</$select>\n<$reveal state=\"$:/temp/infieldsearch\" type=\"nomatch\" text=\"\">\n<$button class=\"tc-btn-invisible\">\n<$action-setfield $tiddler=\"$:/temp/infieldsearch\" $field=\"text\" $value=\"\"/>\n{{$:/core/images/close-button}}\n</$button>\n</$reveal>\n</div>\n\n<$reveal state=\"$:/temp/infieldsearch\" type=\"nomatch\" text=\"\">\n<$reveal state=\"$:/temp/infieldsearch!!field\" type=\"match\" text=\"\">\n<dl>\n<$list filter=\"[!is[shadow]!is[system]fields[]]\" variable=\"field\">\n\n<$reveal type=nomatch text=text default=<<field>>>\n<$macrocall $name=\"searchInField\" field=<<field>> for={{$:/temp/infieldsearch}} ci={{$:/temp/infieldsearch!!case-insensitive}}/>\n</$reveal>\n</$list>\n</dl>\n</$reveal>\n<$reveal state=\"$:/temp/infieldsearch!!field\" type=\"nomatch\" text=\"\">\n\n<dl>\n<$macrocall $name=\"searchInField\" field={{$:/temp/infieldsearch!!field}} for={{$:/temp/infieldsearch}} ci={{$:/temp/infieldsearch!!case-insensitive}}/>\n</dl>\n</$reveal>\n</$reveal>",
             "type": "text/vnd.tiddlywiki",
@@ -121,15 +111,25 @@ version: 1.0.7
             "caption": "In Fields",
             "bag": "default"
         },
+        "$:/plugins/kookma/solution/viewtemplate/header-segment": {
+            "created": "20181107195214597",
+            "creator": "Mohammad",
+            "text": "<$list filter=\"[all[current]tag[solution]]\">\n<div class=\"sl-header\">\n''Ref'': <a href={{!!url}} target=\"_blank\"><$list filter=\"[enlist{!!responder}join[, ]]\" variable=item><$text text=<<item>> /></$list></a><br>\n''Keywords'': <$list filter={{!!keywords}} template=\"$:/plugins/kookma/solution/keywords-template\" />\n</div>\n</$list>\n\n\n",
+            "title": "$:/plugins/kookma/solution/viewtemplate/header-segment",
+            "tags": "$:/tags/ViewTemplate",
+            "modifier": "Mohammad",
+            "modified": "20200211085557240",
+            "list-before": "$:/core/ui/ViewTemplate/body"
+        },
         "$:/plugins/kookma/solution/history": {
             "created": "20181108074735778",
             "creator": "Mohammad",
-            "text": "!! Rev 1.0.7\n<<<\n* ''Dec 13th, 2019''\n* Search in field has got grouped option, see Advanced Search: In Fields\n<<<\n\n!! Rev 1.0.6\n<<<\n* ''Aug 19th, 2019''\n* Minor issue in keyword templated fixed\n<<<\n\n!! Rev 1.0.5\n<<<\n* ''Aug 16th, 2019''\n* Use separate temporary tiddler for search terms\n* Updated to Tiddlywiki 5.1.20\n* New naming for plugin is used ($:/plugins/kookma)\n<<<\n\n!! Rev 1.0.4\n<<<\n* ''Jan 22th, 2019''\n* Add target=_blank to open the links of solution in new tab, windows\n* Minor revision to readme\n<<<\n\n!! Rev 1.0.3\n<<<\n* ''Nov 15th, 2018''\n* A new `In Field` tab is added to Advanced Search to let simply serach in keywords and responder\n* The online name changed to Solution Resource\n\n<<<\n!! Rev 1.0.2\n<<<\n* ''Nov 8th, 2018''\n* Keywords-pill now shows tiddlers have keyword and/or tagged with keyword\n* New and improved template for keywords\n* New macro for kewords-pill\n* Improved css\n\n<<<\n\n!! Rev 1.0.0\n<<<\n* ''Oct 6th, 2018''\n* Initial release\n* A clone of tag-pil macro is used\n<<<",
+            "text": "!! Rev 1.0.9\n<<<\n* ''Feb 11th, 2020''\n* Responder fields is now a list field\n* Entries in responder field are space separated. Titles with space entered using `[[...]]`\n* Solution can work with Locator plugin\n<<<\n\n!! Rev 1.0.7\n<<<\n* ''Dec 13th, 2019''\n* Search in field has got grouped option, see Advanced Search: In Fields\n<<<\n\n!! Rev 1.0.6\n<<<\n* ''Aug 19th, 2019''\n* Minor issue in keyword templated fixed\n<<<\n\n!! Rev 1.0.5\n<<<\n* ''Aug 16th, 2019''\n* Use separate temporary tiddler for search terms\n* Updated to Tiddlywiki 5.1.20\n* New naming for plugin is used ($:/plugins/kookma)\n<<<\n\n!! Rev 1.0.4\n<<<\n* ''Jan 22th, 2019''\n* Add target=_blank to open the links of solution in new tab, windows\n* Minor revision to readme\n<<<\n\n!! Rev 1.0.3\n<<<\n* ''Nov 15th, 2018''\n* A new `In Field` tab is added to Advanced Search to let simply serach in keywords and responder\n* The online name changed to Solution Resource\n\n<<<\n!! Rev 1.0.2\n<<<\n* ''Nov 8th, 2018''\n* Keywords-pill now shows tiddlers have keyword and/or tagged with keyword\n* New and improved template for keywords\n* New macro for kewords-pill\n* Improved css\n\n<<<\n\n!! Rev 1.0.0\n<<<\n* ''Oct 6th, 2018''\n* Initial release\n* A clone of tag-pil macro is used\n<<<",
             "version": "1.0.3",
             "title": "$:/plugins/kookma/solution/history",
             "tags": "",
             "modifier": "Mohammad",
-            "modified": "20191213165128157"
+            "modified": "20200211095257596"
         }
     }
 }
