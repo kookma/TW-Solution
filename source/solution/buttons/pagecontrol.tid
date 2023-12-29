@@ -1,7 +1,6 @@
 caption: {{$:/plugins/kookma/solution/image/question-circle.svg}} {{$:/language/Buttons/Solution/Caption}}
-created: 20181107195113131
-description: {{$:/language/Buttons/Solution/Hint}} 
-modified: 20200317220303300
+description: {{$:/language/Buttons/Solution/Hint}}
+list-before: $:/plugins/kookma/shiraz/ui/Buttons/SwitchPalette
 tags: $:/tags/PageControls
 title: $:/plugins/kookma/solution/buttons/pagecontrol
 type: text/vnd.tiddlywiki
