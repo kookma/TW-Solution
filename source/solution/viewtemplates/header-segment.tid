@@ -5,10 +5,12 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]tag[solution]]">
 <div class="solution-header">
-<$set name=responders tiddler=<<currentTiddler>> field="responder" emptyValue="[[Not set yet]]">
-''Ref'': <a href={{!!url}} target="_blank"><$list filter="[enlist<responders>join[, ]]" variable=item><$text text=<<item>> /></$list></a><br>
+<$vars lb="[" rb="]">
+<$set name=responders tiddler=<<currentTiddler>> field="responder" emptyValue={{!!url}}>
+''Ref'': <a href={{{ [<currentTiddler>get[url]trim<lb>trim<rb>] }}} target="_blank"><$list filter="[enlist<responders>join[, ]]" variable=item><$text text=<<item>> /></$list></a><br>
 ''Keywords'': <$list filter={{!!keywords}} template="$:/plugins/kookma/solution/templates/keywords" />
 </$set>
+</$vars>
 </div>
 </$list>
 
