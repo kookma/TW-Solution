@@ -1,0 +1,17 @@
+title: $:/plugins/kookma/solution/templates/keywords
+type: text/vnd.tiddlywiki
+
+<!-- filter tiddlers tagged with current keyword, or has the keyword in its keywords field. -->
+\define mainFilter() [tag<currentTiddler>] [search:keywords<currentTiddler>]
+
+<$set name="transclusion" value=<<qualify "$:/state/solution/popup/keyword">> >
+<$button class="tc-btn-invisible solution-keywords" popup=<<transclusion>> dragFilter=<<mainFilter>> >
+<$text text=<<currentTiddler>>/>
+</$button>
+<$reveal state=<<transclusion>> type="popup" position="below" animate="yes" class="tc-drop-down">
+<$link/>
+<hr>
+<!-- dislay all tiddlers tagged with kwd or have kwd in their keywords field -->
+<$list filter=<<mainFilter>> template="$:/core/ui/ListItemTemplate" />
+</$reveal>
+</$set>

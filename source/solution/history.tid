@@ -1,9 +1,9 @@
-tags: 
 title: $:/plugins/kookma/solution/history
 type: text/vnd.tiddlywiki
 
-Full change log  https://kookma.github.io/TW-Solution/#ChangeLog
+Full change log: https://kookma.github.io/TW-Solution/#ChangeLog
 
-* ''1.2.0'' -- 2022.10.20 -- update plugin display name
-* ''1.1.0'' -- 2020.03.17 -- fixed issues on empty responder field
+* ''1.4.0'' -- 2025.07.05 -- updated to TiddlyWiki 5.3.6, rewritten from scratch
+* ''1.2.0'' -- 2022.10.20 -- updated plugin display name
+* ''1.1.0'' -- 2020.03.17 -- fixed issues with empty responder field
 * ''1.0.0'' -- 2018.10.06 -- initial public release

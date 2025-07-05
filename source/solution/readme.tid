@@ -1,9 +1,8 @@
-tags: 
 title: $:/plugins/kookma/solution/readme
 type: text/vnd.tiddlywiki
 
 ; Solution plugin
-There are many questions and answers in [[TW Google forum|https://groups.google.com/forum/#!forum/tiddlywiki]], some of them shows elegant solution to raised questions and worth to be documented in a manner to be accessible easily later on.
+There are many questions and answers in [[TW Google forum|https://groups.google.com/forum/#!forum/tiddlywiki]], and [[TW Talk|http://talk.tiddlywiki.org/]] some of them shows elegant solution to raised questions and worth to be documented in a manner to be accessible easily later on.
 
 Solution is a small plugin to create solution tiddlers. It adds a button to page controls, on click, creates a tiddler tagged with `solution`, contains `keywords`, `responder`, and `url` fields. It then uses a view template to show the `responder` (author), reference post (`url`), and the `keywords` in a semantic way.
 

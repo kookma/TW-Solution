@@ -2,14 +2,14 @@ caption: {{$:/plugins/kookma/solution/image/question-circle.svg}} {{$:/language/
 description: {{$:/language/Buttons/Solution/Hint}}
 list-before: $:/plugins/kookma/shiraz/ui/Buttons/SwitchPalette
 tags: $:/tags/PageControls
-title: $:/plugins/kookma/solution/buttons/pagecontrol
+title: $:/plugins/kookma/solution/ui/Buttons/solution
 type: text/vnd.tiddlywiki
 
 \define new-solution()
 <$action-sendmessage 
     $message="tm-new-tiddler"
     keywords=""
-    tags="solution"
+    tags={{{ [[solution]] [{$:/config/solution/extra-tags}enlist-input[]] +[format:titlelist[]join[ ]] }}}
     responder=""
     url="" />
 \end

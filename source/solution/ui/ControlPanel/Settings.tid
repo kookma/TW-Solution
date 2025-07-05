@@ -1,0 +1,14 @@
+caption: Solution
+tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
+title: $:/plugins/kookma/solution/ui/ControlPanel/Settings
+type: text/vnd.tiddlywiki
+
+These settings let you customise the behaviour of Solution plugin.
+
+---
+
+;Show Solution settings in more sidebar
+:<$checkbox tiddler="$:/plugins/kookma/solution/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show settings in more sidebar</$checkbox>
+
+;Extra tags
+: <label style="margin-right:5px;">Tags to be added to new solutions tiddler</label><$edit-text tiddler="$:/config/solution/extra-tags" tag=input default="" placeholder="e.g. myTag [[Tag with Space]]"/>

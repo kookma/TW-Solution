@@ -1,11 +1,16 @@
 {
-	"title": "$:/plugins/kookma/solution",
-	"description": "Solution Resource",
-	"author": "Mohammad Rahmani",
-	"version": "1.3.0",
-	"core-version": ">=5.1.21",
-	"source": "https://github.com/kookma/TW-Solution",
-	"list": "readme history license",
-	"dependents": "",
-	"plugin-type": "plugin"
+    "title": "$:/plugins/kookma/solution",
+    "version": "1.4",
+    "stability": "STABILITY_2_STABLE",
+    "name": "Solution",
+    "description": "Create resource wiki using question and answer templates and tools",
+    "author": "Mohammad Rahmani",
+    "source": "https://github.com/kookma/TW-Solution",
+    "list": "readme license history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": ">=5.1.21",
+    "packaged-by": "Gatha on 5th July 2025, 22:00:34"
 }
