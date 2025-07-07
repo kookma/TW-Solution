@@ -3,6 +3,7 @@ type: text/vnd.tiddlywiki
 
 Full change log: https://kookma.github.io/TW-Solution/#ChangeLog
 
+* ''1.4.2'' -- 2025.07.07 -- updated to TiddlyWiki 5.3.7
 * ''1.4.0'' -- 2025.07.05 -- updated to TiddlyWiki 5.3.6, rewritten from scratch
 * ''1.2.0'' -- 2022.10.20 -- updated plugin display name
 * ''1.1.0'' -- 2020.03.17 -- fixed issues with empty responder field

@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/kookma/solution",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "stability": "STABILITY_2_STABLE",
     "name": "Solution",
     "description": "Create structured solution tiddlers from TiddlyWiki Q&A",
@@ -12,5 +12,5 @@
     "dependents": "",
     "plugin-type": "plugin",
     "core-version": ">=5.1.21",
-    "packaged-by": "Gatha on 6th July 2025, 00:59:57"
+    "packaged-by": "Gatha on 7th July 2025, 16:54:01"
 }
